@@ -8,31 +8,38 @@ namespace A4._3_Loops
         {
             int passes = 0;
             int failures = 0;
-            int studentCounter = 1;
+            int itemCounter = 1;
+            string Continue = y;
 
-            while (studentCounter <= 10)
+            while (Continue = y)
             {
-                Console.Write("Enter Item Id: ");
-                int result = int.Parse(Console.ReadLine());
+                Console.Write("Enter Item Id or enter invalid response to exit: ");
+                int Id = int.Parse(Console.ReadLine());
 
-                if (result == 1)
+                if (Id == 1)
                 {
                     passes = passes + 1;
                 }
-                else
+                if (Id == 2)
+                {
+                    passes = passes + 1;
+                }
+                if (Id == 3)
+                {
+                    passes = passes + 1;
+                }
+                    else
                 {
                     failures = failures + 1;
                 }
 
-                studentCounter = studentCounter + 1;
+                itemCounter = itemCounter + 1;
+                    Console.WriteLine("Continue? (Y/N)");
+                    Continue = Console.ReadLine();
             }
 
-            Console.WriteLine($"Passed: {passes}\nFailed: {failures}");
+            //Console.WriteLine($"Passed: {passes}\nFailed: {failures}");
 
-            if (passes > 8)
-            {
-                Console.WriteLine("Bonus to instructor!");
-            }
         }
     }
 }
